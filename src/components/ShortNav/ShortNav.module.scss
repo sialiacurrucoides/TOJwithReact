@@ -1,5 +1,7 @@
 @use "../../scss/variables";
 
+$sideSpace: 0.75rem;
+
 .shortNav {
     position: absolute;
     bottom: 0;
@@ -16,14 +18,14 @@
     justify-content: space-around;
     align-items: center;
     margin-left: auto;
-    margin-right: 0.5rem;
+    margin-right: $sideSpace;
 }
 
 .home {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0.25rem 0.5rem;
+    padding: 0.25rem $sideSpace;
 }
 
 .homeIcon {

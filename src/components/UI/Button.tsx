@@ -1,14 +1,14 @@
 import styles from './Button.module.scss';
 
-const Button: React.FC<{title: string, 
+const Button: React.FC<{
     color?: string,
     width?: string
-}> = ({title, color = "#888888", width}) => {
+}> = ({children, color = "#888888", width}) => {
     return (
         <button 
         style={{backgroundColor: color, width: width}}
         className={styles.button}>
-            {title}
+            {children}
         </button>
     );
 };

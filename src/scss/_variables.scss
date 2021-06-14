@@ -1,13 +1,14 @@
 // game colors
 
 $backgroundColor: #148056c9;
-$goGreenColor: #6b9900;
+$goGreenColor: #72a102;
 $red: #FF003C;
 $orange: #FF8A00;
 $infoColor: #00C176;
 $grey: #888888;
 $grey-light: #c5c5c5;
-$grey-dark: #555555;
+$grey-dark: #5f5f5f;
+$black: #2f2f2f;
 $white: #f1f1f1;
 
 // measures
@@ -19,4 +20,5 @@ $shortNavHeight: 56px;
     red: $red;
     orange: $orange;
     grey: $grey;
+    greyDark: $grey-dark;
 }
