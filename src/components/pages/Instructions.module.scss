@@ -8,20 +8,8 @@
 }
 
 .textBox {
-    width: 100%;
+    @include mixins.textBox();
     height: 80%;
-    color: variables.$black;
-    background-color: variables.$white;
-    border-radius: 8px;
-    margin-top: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-
-    & p {
-        line-height: 1.2;
-    }
 }
 
 .title {

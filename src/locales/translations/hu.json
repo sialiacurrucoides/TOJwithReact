@@ -6,5 +6,9 @@
     "instructions.para1": "Nyomd le a {leftArrow} gombot, ha balról jobbra haladt a hang.",
     "instructions.para2": "Nyomd le a {rightArrow} gombot, ha jobbról balra haladt a hang.",
     "instructions.para3": "A játék 8 hiba után ér véget.",
-    "instructions.para4": "A játék térben középen lévő lufira kattintva kezdhetsz."
+    "instructions.para4": "A játék térben középen lévő lufira kattintva kezdhetsz.",
+    "calibration.title": "Kezdés előtt",
+    "calibration.para1": "Kalibrálni kell a hangerőt a megbízhatóbb mérésért.",
+    "calibration.para2": "Erősen és gyorsan súrold össze a két tenyered, és állíts be úgy a hangerőt, hogy a minta hang és az általad generált hasonlóan erős legyen.",
+    "calibration.para3": "Kattints a kezekre a minta hangért!"
 }

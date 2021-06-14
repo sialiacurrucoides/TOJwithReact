@@ -10,5 +10,22 @@
     color: variables.$white;
     background: variables.$grey;
     padding: 0.5rem 1rem;
-    font-weight: 700;
+    font-weight: 500;
+}
+
+@mixin textBox {
+    color: variables.$black;
+    background-color: variables.$white;
+    border: 1px solid variables.$grey;
+    box-shadow: 1px 1px 4px variables.$grey-light;
+    border-radius: 8px;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    & p {
+        line-height: 1.2;
+    }
 }
