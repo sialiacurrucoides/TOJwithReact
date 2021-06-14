@@ -1,6 +1,5 @@
 import { defineMessages, FormattedMessage } from 'react-intl';
 import styles from './Instructions.module.scss';
-import Button from '../UI/Button';
 import BalloonIcon from '../../assets/imgs/juli_jatek_lufi_GO.png';
 
 const messages = defineMessages({
@@ -29,7 +28,7 @@ const messages = defineMessages({
 const Instructions: React.FC = () => {
     return (
         <div className={styles.instructions}>
-            <Button color={styles.red} width="100%"><FormattedMessage {...messages.title}/></Button>
+            <div className={styles.title}><FormattedMessage {...messages.title}/></div>
             <div className={styles.textBox}>
                 <p><FormattedMessage {...messages.paragraph1} 
                 values={{leftArrow: <span className={styles.arrow}>&#8592;</span>}}/></p>

@@ -1,4 +1,5 @@
 @use '../../scss/variables';
+@use '../../scss/mixins';
 
 .instructions {
     padding: 1rem;
@@ -21,6 +22,11 @@
     & p {
         line-height: 1.2;
     }
+}
+
+.title {
+    @include mixins.buttonLook();
+    background-color: variables.$red;
 }
 
 .arrow {
