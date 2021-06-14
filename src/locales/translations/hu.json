@@ -2,5 +2,9 @@
     "button.play": "Játék",
     "button.instructions": "Instrukciók",
     "button.achievements": "Eredmények",
-    "button.about": "Rólunk"
+    "button.about": "Rólunk",
+    "instructions.para1": "Nyomd le a {leftArrow} gombot, ha balról jobbra haladt a hang.",
+    "instructions.para2": "Nyomd le a {rightArrow} gombot, ha jobbról balra haladt a hang.",
+    "instructions.para3": "A játék 8 hiba után ér véget.",
+    "instructions.para4": "A játék térben középen lévő lufira kattintva kezdhetsz."
 }
