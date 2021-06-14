@@ -1,0 +1,11 @@
+@use '../../scss/variables';
+
+.container {
+    width: 300px;
+    height: calc(#{variables.$fieldHeight} + #{variables.$shortNavHeight});
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 1px 1px 4px variables.$grey;
+    overflow: hidden;
+    position: relative;
+}
