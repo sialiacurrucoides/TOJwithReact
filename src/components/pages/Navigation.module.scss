@@ -1,0 +1,11 @@
+@use '../../scss/variables';
+
+.navigation {
+    position: relative;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 8rem;
+}

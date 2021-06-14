@@ -1,7 +1,7 @@
 // game colors
 
 $backgroundColor: #148056c9;
-$goGreenColor: #88C100;
+$goGreenColor: #6b9900;
 $red: #FF003C;
 $orange: #FF8A00;
 $infoColor: #00C176;
@@ -13,3 +13,10 @@ $white: #f1f1f1;
 // measures
 $fieldHeight: 500px;
 $shortNavHeight: 56px;
+
+:export {
+    goGreen: $goGreenColor;
+    red: $red;
+    orange: $orange;
+    grey: $grey;
+}

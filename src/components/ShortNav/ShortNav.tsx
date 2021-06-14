@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import styles from './ShortNav.module.scss';
 import LanguageControlButton from '../LangControl/LanguageControlButtom';
 import { languages } from '../../constants/constants';
@@ -18,7 +20,7 @@ const ShortNav: React.FC = () => {
     return (
         <div className={styles.shortNav}>
             <div className={styles.home}>
-                <HomeIcon className={styles.homeIcon} />
+                <Link to="/navigation"><HomeIcon className={styles.homeIcon} /></Link>
             </div>
             <div className={styles.langControl}>
                 {languages.map(lang => {
