@@ -1,0 +1,67 @@
+@use '../../scss/variables';
+@use '../../scss/mixins';
+
+.gameField {
+    background-color: #fff;
+    background-image: url('../../assets/imgs/game_background.webp');
+    position: relative;
+    width: 100%;
+    height: variables.$fieldHeight;
+}
+
+.feedback {
+    position: absolute;
+    bottom: 0;
+    height: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rightArrow, .leftArrow {
+    background: linear-gradient(to top, variables.$grey-dark, variables.$grey, variables.$grey-light);
+    color: variables.$white;
+    height: 100%;
+    padding: 0 0.5rem;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 -1px 4px variables.$black;
+}
+
+.rightArrow {
+    border-top-left-radius: 8px;
+}
+
+.leftArrow {
+    border-top-right-radius: 8px;
+}
+
+.activeArrow {
+    color: variables.$black;
+}
+
+.arrow {
+    transform: translate(0, -4px);
+}
+
+.balloon {
+    position: absolute;
+    bottom: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.startText {
+    position: absolute;
+    bottom: 55%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 500;
+    font-size: 2rem;
+    opacity: 0.4;
+    color: variables.$white;
+}
