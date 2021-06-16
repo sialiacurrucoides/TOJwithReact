@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { defineMessages, FormattedMessage } from 'react-intl';
+import { Link } from 'react-router-dom';
 import Button from '../UI/Button';
 
 import styles from './Practice.module.scss';
@@ -65,7 +66,7 @@ const Practice: React.FC = () => {
                 {showFeedback && !isCorrect && <div className={styles.wrong}><span>&#x58;</span></div>} 
                 {showFeedback && isCorrect && <div className={styles.correct}><span>&#x2713;</span></div>}
             </div>
-            <Button width={'80%'} color={styles.info} ><FormattedMessage {...messages.start}/></Button>
+            <Link to="/game" ><Button color={styles.info} ><FormattedMessage {...messages.start}/></Button></Link>
         </div>
     );
 };

@@ -10,5 +10,8 @@
     "calibration.title": "Kezdés előtt",
     "calibration.para1": "Kalibrálni kell a hangerőt a megbízhatóbb mérésért.",
     "calibration.para2": "Erősen és gyorsan súrold össze a két tenyered, és állíts be úgy a hangerőt, hogy a minta hang és az általad generált hasonlóan erős legyen.",
-    "calibration.para3": "Kattints a kezekre a minta hangért!"
+    "calibration.para3": "Kattints a kezekre a minta hangért!",
+    "practice.question": "Balról jobbra {leftArrow} vagy jobbról balra {rightArrow}?",
+    "practice.playSound": "Hang lejátszás",
+    "practice.startGame": "Játékra fel!"
 }
