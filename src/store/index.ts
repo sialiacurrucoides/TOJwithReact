@@ -2,6 +2,7 @@ import { createSlice, configureStore } from '@reduxjs/toolkit';
 
 const initialState = {
     selectedLanguage: 'en',
+    activeArrow: 'none'
 }
 
 const generalStateSlice = createSlice({
@@ -10,6 +11,9 @@ const generalStateSlice = createSlice({
     reducers: {
         changeLanguage(state, action){
             state.selectedLanguage = action.payload;
+        },
+        setActiveArrow(state, action){
+            state.activeArrow = action.payload;
         }
     }
 });

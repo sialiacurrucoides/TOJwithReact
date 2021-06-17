@@ -17,7 +17,7 @@ fetch('mtojsounds/tone.wav').then(data => data.arrayBuffer())
 
 export const createSoundSample = (startEar: string, ISI: number) => {
 
-    const isiSilence = Array(ISI*sampleFrequency/1000).fill(0);
+    const isiSilence = Array(Math.floor(ISI*sampleFrequency/1000)).fill(0);
     const sampleLength = toneLength * 2 + isiSilence.length;    
     const toneSilence = Array(toneLength).fill(0);
     const leadingChannel = [...Array.from(tone), ...isiSilence, ...toneSilence];

@@ -13,5 +13,7 @@
     "calibration.para3": "Kattints a kezekre a minta hangért!",
     "practice.question": "Balról jobbra {leftArrow} vagy jobbról balra {rightArrow}?",
     "practice.playSound": "Hang lejátszás",
-    "practice.startGame": "Játékra fel!"
+    "practice.startGame": "Játékra fel!",
+    "feedback": "A küszöböd {threshold} ms.",
+    "feedback.again": "Új mérés?"
 }

@@ -1,13 +1,10 @@
-import { useState, useEffect } from 'react';
 import { defineMessages, FormattedMessage } from 'react-intl';
 import { Link } from 'react-router-dom';
 import Button from '../UI/Button';
 
 import styles from './Practice.module.scss';
-import { createSoundSample } from '../../utils/createSoundSample';
+import useTOJtrial from '../../hooks/useTOJtrial';
 
-// const rightToLeft = new Audio('mtojsounds/soundRL_ISI180.wav');
-// const leftToRight = new Audio('mtojsounds/soundLF_ISI180.wav');
 
 const messages = defineMessages({
     question: {
@@ -25,33 +22,7 @@ const messages = defineMessages({
 });
 
 const Practice: React.FC = () => {
-    const [correctAnswer, setCorrectAnswer] = useState<string>("");
-    const [isCorrect, setIsCorrect] = useState<boolean>(false);
-    const [showFeedback, setShowFeedback] = useState(false);
-
-    const playTrial = () => {
-        if (Math.random() > 0.5){
-            setCorrectAnswer('ArrowRight');
-            createSoundSample('right', 150);
-        } else {
-            setCorrectAnswer('ArrowLeft');
-            createSoundSample('left', 150);
-        }
-        
-    };
-
-    useEffect(() => {
-        const handleResponse = (event: KeyboardEvent) => {
-            setIsCorrect(event.code === correctAnswer);
-            setShowFeedback(true);
-            setTimeout(() => setShowFeedback(false), 500);
-        };
-        document.addEventListener('keydown', handleResponse, false);
-        return () => {
-            document.removeEventListener('keydown', handleResponse, false);
-        }
-    },[correctAnswer]);
-    
+    const {isCorrect, showFeedback, playTrial} = useTOJtrial();
 
     return (
         <div className={styles.practice}>
@@ -59,7 +30,7 @@ const Practice: React.FC = () => {
                 <FormattedMessage {...messages.question} 
                 values={{leftArrow: <span className={styles.arrow}>&#8592;</span>, rightArrow: <span className={styles.arrow}>&#8594;</span>}}/>
             </h3>
-            <button className={styles.trialBtn} onClick={playTrial}>
+            <button className={styles.trialBtn} onClick={() => playTrial(150)}>
                 <FormattedMessage {...messages.playSound}/>
             </button>
             <div className={styles.feedbackContainer}>

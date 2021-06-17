@@ -30,6 +30,7 @@
     align-items: center;
     justify-content: center;
     box-shadow: inset 0 -1px 4px variables.$black;
+    opacity: 0.7;
 }
 
 .rightArrow {
@@ -41,7 +42,7 @@
 }
 
 .activeArrow {
-    color: variables.$black;
+    opacity: 0.9;
 }
 
 .arrow {
@@ -53,6 +54,11 @@
     bottom: 40%;
     left: 50%;
     transform: translateX(-50%);
+    cursor:pointer;
+
+    & img {
+        z-index: 100;
+    }
 }
 
 .startText {

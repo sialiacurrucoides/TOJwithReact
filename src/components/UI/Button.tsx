@@ -2,12 +2,13 @@ import styles from './Button.module.scss';
 
 const Button: React.FC<{
     color?: string,
-    width?: string
-}> = ({children, color = "#888888", width}) => {
+    width?: string,
+    onClick?: () => void
+}> = ({children, color = "#888888", width, onClick}) => {
     return (
         <button 
         style={{backgroundColor: color, width: width}}
-        className={styles.button}>
+        className={styles.button} onClick={onClick}>
             {children}
         </button>
     );
