@@ -4,6 +4,6 @@
     background-color: #fff;
     background-image: url('../../assets/imgs/game_background_Black_White.webp');
     position: relative;
-    width: 100%;
+    width: variables.$fieldWidth;
     height: variables.$fieldHeight;
 }

@@ -2,7 +2,10 @@ import { createSlice, configureStore } from '@reduxjs/toolkit';
 
 const initialState = {
     selectedLanguage: 'en',
-    activeArrow: 'none'
+    activeArrow: 'none',
+    longestRun: 0,
+    smallestThreshold: 200,
+    betterTimes: 0
 }
 
 const generalStateSlice = createSlice({
@@ -14,6 +17,15 @@ const generalStateSlice = createSlice({
         },
         setActiveArrow(state, action){
             state.activeArrow = action.payload;
+        },
+        setLongestRun(state, action){
+            state.longestRun = action.payload > state.longestRun ? action.payload : state.longestRun;
+        },
+        setSmallestThreshold(state, action){
+            state.smallestThreshold = action.payload < state.smallestThreshold ? action.payload : state.smallestThreshold;
+        },
+        setBetterTimes(state){
+            state.betterTimes = state.betterTimes + 1;
         }
     }
 });

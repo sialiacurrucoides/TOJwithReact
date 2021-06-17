@@ -33,7 +33,7 @@ const useTOJtrial = () => {
         return () => {
             document.removeEventListener('keydown', handleResponse, false);
         }
-    },[correctAnswer]);
+    },[correctAnswer, dispatch]);
 
     return {isCorrect, showFeedback, playTrial};
 }

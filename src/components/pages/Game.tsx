@@ -1,5 +1,6 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import { useAppSelector } from '../../hooks/storeManipulation';
+import { useAppDispatch } from '../../hooks/storeManipulation';
 import styles from './Game.module.scss';
 import balloonImg from '../../assets/imgs/juli_jatek_lufi.png';
 import balloonGoImg from '../../assets/imgs/juli_jatek_lufi_GO.png'; 
@@ -7,6 +8,8 @@ import useTOJtrial from '../../hooks/useTOJtrial';
 import { calcThreshold } from '../../utils/calcThreshold';
 import { maxTurnNr } from '../../constants/constants';
 import Feedback from '../Layout/Feedback';
+import { generalStateActions } from '../../store';
+import { referenceThreshold } from '../../constants/constants';
 
 const initialISI = 120;
 const initialStep = 20;
@@ -20,15 +23,17 @@ const Game: React.FC = () => {
     const {isCorrect, showFeedback, playTrial} = useTOJtrial();
     const [balloonToShow, setBalloonToShow] = useState(balloonGoImg);
     const [gameOn, setGameOn] = useState(false);
+    // const [gameEnd, setGameEnd] = useState(false);
     const [fromBottom, setFromBottom] = useState(`${initialBalloonPosition}%`);
     let currentISI = useRef<number>(initialISI);
-    const [threshold, setThreshold] = useState(0);
+    const [threshold, setThreshold] = useState(200);
     let trialNumber = useRef<number>(0);
     let thresholds = useRef<number[]>([]);
     let correctInARow = useRef(0);
     let step = useRef<number>(initialStep);
     let errorNumber = useRef<number>(0);
     const activeArrow = useAppSelector(state => state.general.activeArrow);
+    const dispatch = useAppDispatch();
 
     const evalResponse = (isCorrect: boolean) => {
         trialNumber.current++;
@@ -61,6 +66,15 @@ const Game: React.FC = () => {
         playTrial(initialISI);
     };
 
+    const updateResults = useCallback(
+        (calculatedThreshold: number) => {
+            dispatch(generalStateActions.setLongestRun(trialNumber.current));
+            dispatch(generalStateActions.setSmallestThreshold(calculatedThreshold));
+            if (calculatedThreshold < referenceThreshold) dispatch(generalStateActions.setBetterTimes());
+        },
+        [trialNumber, dispatch]
+    );
+
     useEffect(() => {
         if (showFeedback){
             setTimeout(() => {
@@ -76,9 +90,15 @@ const Game: React.FC = () => {
         if (ths.length === maxTurnNr || 
             (ths[ths.length - 1] === ths[ths.length - 2] && 
             ths[ths.length - 2] === ths[ths.length - 3])){
-                setThreshold(calcThreshold(ths));
+                const calculatedThreshold = calcThreshold(ths);
+                setThreshold(calculatedThreshold); 
             }
     }, [thresholds]);
+
+    useEffect(() => {
+        updateResults(threshold);
+        
+    }, [threshold, updateResults])
 
 
     return (
