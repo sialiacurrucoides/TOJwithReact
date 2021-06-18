@@ -6,7 +6,7 @@ import Button from '../UI/Button';
 const messages = defineMessages({
     feedback: {
         id: 'feedback',
-        defaultMessage: 'Your threshold is {threshold} ms'
+        defaultMessage: 'Your threshold is {threshold} ms.'
     },
     again: {
         id: 'feedback.again',
@@ -24,10 +24,12 @@ const Feedback: React.FC<{threshold: number}> = ({threshold}) => {
     return (
         <div className={styles.backdrop}>
             <div className={styles.feedbackModal}>
-                <FormattedMessage {...messages.feedback} values={{threshold: threshold}}/>
-                    <Button color={styles.info} width="100%" onClick={handleClick}>
-                        <FormattedMessage {...messages.again}/>
-                    </Button>
+                <p><FormattedMessage {...messages.feedback} 
+                values={{threshold: <span className={styles.threshold}>{threshold}</span>}}/>
+                </p>
+                <Button color={styles.info} width="100%" onClick={handleClick}>
+                    <FormattedMessage {...messages.again}/>
+                </Button>
             </div>
         </div>
     );
