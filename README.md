@@ -13,6 +13,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 <a href="https://iconscout.com/icons/clock" target="_blank">Clock Icon</a> by <a href="https://iconscout.com/contributors/unicons">Unicons Font</a> on <a href="https://iconscout.com">Iconscout</a>
 <a href="https://iconscout.com/icons/trophy" target="_blank">Trophy Icon</a> by <a href="https://iconscout.com/contributors/amit-jakhu" target="_blank">Amit Jakhu</a>
+<a href="https://iconscout.com/icons/play" target="_blank">Play Icon</a> by <a href="https://iconscout.com/contributors/eva-icons">Eva Icons</a> on <a href="https://iconscout.com">Iconscout</a>
 https://www.iconfinder.com/icons/1608449/chart_line_icon
 
 

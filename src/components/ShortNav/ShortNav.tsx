@@ -7,6 +7,8 @@ import { useAppDispatch } from '../../hooks/storeManipulation';
 import { useAppSelector } from '../../hooks/storeManipulation';
 import { generalStateActions } from '../../store/index';
 import { ReactComponent as HomeIcon } from '../../assets/svgs/iconfinder_216242_home_icon.svg';
+import {ReactComponent as PlayIcon } from '../../assets/svgs/play.svg';
+import {ReactComponent as TrophyIcon } from '../../assets/svgs/trophy.svg';
 
 const ShortNav: React.FC = () => {
 
@@ -19,8 +21,14 @@ const ShortNav: React.FC = () => {
 
     return (
         <div className={styles.shortNav}>
-            <div className={styles.home}>
+            <div className={styles.navIcon}>
                 <Link to="/navigation"><HomeIcon className={styles.homeIcon} /></Link>
+            </div>
+            <div className={styles.navIcon}>
+                <Link to="/game"><PlayIcon className={styles.playIcon} /></Link>
+            </div>
+            <div className={styles.navIcon}>
+                <Link to="/achievements"><TrophyIcon className={styles.trophyIcon} /></Link>
             </div>
             <div className={styles.langControl}>
                 {languages.map(lang => {

@@ -2,6 +2,10 @@
 
 $sideSpace: 0.75rem;
 
+.shortNav, .shortNav > * {
+    box-sizing: border-box;
+}
+
 .shortNav {
     position: absolute;
     bottom: 0;
@@ -10,6 +14,7 @@ $sideSpace: 0.75rem;
     background-color: variables.$grey-dark;
     display: flex;
     justify-content: space-between;
+    padding: 0 $sideSpace;
 }
 
 .langControl {
@@ -18,16 +23,24 @@ $sideSpace: 0.75rem;
     justify-content: space-around;
     align-items: center;
     margin-left: auto;
-    margin-right: $sideSpace;
 }
 
-.home {
+.navIcon {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0.25rem $sideSpace;
+    padding: 0.25rem;
 }
 
-.homeIcon {
+.homeIcon, .playIcon, .trophyIcon {
     fill: variables.$white;
+}
+
+.playIcon {
+    opacity: 0.8;
+}
+
+.trophyIcon {
+    opacity: 0.8;
+    height: 28px;
 }

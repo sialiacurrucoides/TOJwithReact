@@ -10,6 +10,8 @@
 .textBox {
     @include mixins.textBox();
     height: 80%;
+    margin-top: 0.5rem;
+    line-height: 1.4;
 }
 
 .title {

@@ -9,11 +9,11 @@ const messages = defineMessages({
     },
     paragraph1: {
         id: 'instructions.para1',
-        defaultMessage: 'Press {leftArrow} when you hear the sound propagating from left to right.'
+        defaultMessage: 'Press (click on touchscreen) {leftArrow} when you hear the sound propagating from left to right.'
     },
     paragraph2: {
         id: 'instructions.para2',
-        defaultMessage: 'Press {rightArrow} when you hear the sound propagating from right to left.'
+        defaultMessage: 'Press (click on touchscreen) {rightArrow} when you hear the sound propagating from right to left.'
     },
     paragraph3: {
         id: 'instructions.para3',
