@@ -15,5 +15,8 @@
     "practice.playSound": "Hang lejátszás",
     "practice.startGame": "Játékra fel!",
     "feedback": "A küszöböd {threshold} ms.",
-    "feedback.again": "Új mérés?"
+    "feedback.again": "Új mérés?",
+    "about.title": "Rólunk",
+    "about.para1": "A szerző (S.J.) kísérleteket folytatott az Idői Sorrendiségi Döntés feladattal, amiről részletek a következő {link}-en olvashatóak.",
+    "about.para2": "Sok köszönet Szerafin Ágnes Katának ( {homepage} ) a design kialakításában nyújtott segítségéért."
 }

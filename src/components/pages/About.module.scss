@@ -1,0 +1,33 @@
+@use '../../scss/mixins';
+@use '../../scss/variables';
+
+.about, .about > * {
+    box-sizing: border-box;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 1rem;
+    line-height: 1.4;
+}
+
+.textBox {
+    @include mixins.textBox();
+
+    & a {
+        text-decoration: none;
+    }
+}
+
+.title {
+    @include mixins.buttonLook();
+    background-color: variables.$infoColor;
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+.highlighted {
+    color: variables.$infoColor;
+}

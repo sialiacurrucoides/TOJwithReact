@@ -18,15 +18,7 @@
 }
 
 .dataBox {
-    position: relative;
-    border: 1px solid variables.$grey;
-    border-radius: 8px;
-    margin-bottom: 0.5rem;
-    box-shadow: 1px 1px 1px variables.$grey;
-    background: variables.$white;
-    text-align: center;
-    min-height: 50px;
-    padding: 0.75rem;
+    @include mixins.textBox();
 }
 
 .icon {
