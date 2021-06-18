@@ -34,13 +34,13 @@ $sideSpace: 0.75rem;
 
 .homeIcon, .playIcon, .trophyIcon {
     fill: variables.$white;
-}
-
-.playIcon {
-    opacity: 0.8;
+    opacity: 0.6;
 }
 
 .trophyIcon {
-    opacity: 0.8;
     height: 28px;
+}
+
+.activeLink > *{
+    opacity: 1;
 }

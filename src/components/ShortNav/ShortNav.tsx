@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import styles from './ShortNav.module.scss';
 import LanguageControlButton from '../LangControl/LanguageControlButtom';
@@ -22,13 +22,19 @@ const ShortNav: React.FC = () => {
     return (
         <div className={styles.shortNav}>
             <div className={styles.navIcon}>
-                <Link to="/navigation"><HomeIcon className={styles.homeIcon} /></Link>
+                <NavLink to="/navigation" activeClassName={styles.activeLink}>
+                    <HomeIcon className={styles.homeIcon} />
+                </NavLink>
             </div>
             <div className={styles.navIcon}>
-                <Link to="/game"><PlayIcon className={styles.playIcon} /></Link>
+                <NavLink to="/game" activeClassName={styles.activeLink}>
+                    <PlayIcon className={styles.playIcon} />
+                </NavLink>
             </div>
             <div className={styles.navIcon}>
-                <Link to="/achievements"><TrophyIcon className={styles.trophyIcon} /></Link>
+                <NavLink to="/achievements" activeClassName={styles.activeLink}>
+                    <TrophyIcon className={styles.trophyIcon} />
+                </NavLink>
             </div>
             <div className={styles.langControl}>
                 {languages.map(lang => {
