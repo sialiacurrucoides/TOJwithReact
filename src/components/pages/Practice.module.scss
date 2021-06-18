@@ -70,3 +70,11 @@ $innerContainer: 80%;
         font-size: 2rem;
     }
 }
+
+.controls {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 0;
+}

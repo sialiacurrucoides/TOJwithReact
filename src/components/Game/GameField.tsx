@@ -7,7 +7,12 @@ import Instructions from '../pages/Instructions';
 import About from '../pages/About';
 import Achievements from '../pages/Achievements';
 import Game from '../pages/Game';
+import GameMobile from '../pages/GameMobile';
 import Practice from '../pages/Practice';
+import PracticeMobile from '../pages/PracticeMobile';
+import isTouchDevice from '../../utils/isTouchDevice';
+
+const isTouchable = isTouchDevice();
 
 const GameField: React.FC = () => {
     return (
@@ -32,10 +37,10 @@ const GameField: React.FC = () => {
                     <Achievements />
                 </Route>
                 <Route path="/practice">
-                    <Practice />
+                    {!isTouchable ? <Practice /> : <PracticeMobile />}
                 </Route>
                 <Route path="/game">
-                    <Game />
+                    {!isTouchable ? <Game /> : <GameMobile />}
                 </Route>
             </Switch>
         </div>

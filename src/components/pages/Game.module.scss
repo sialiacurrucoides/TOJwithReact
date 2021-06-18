@@ -20,34 +20,34 @@
     align-items: center;
 }
 
-.rightArrow, .leftArrow {
-    background: linear-gradient(to top, variables.$grey-dark, variables.$grey, variables.$grey-light);
-    color: variables.$white;
-    height: 100%;
-    padding: 0 0.5rem;
-    font-size: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: inset 0 -1px 4px variables.$black;
-    opacity: 0.7;
-}
+// .rightArrow, .leftArrow {
+//     background: linear-gradient(to top, variables.$grey-dark, variables.$grey, variables.$grey-light);
+//     color: variables.$white;
+//     height: 100%;
+//     padding: 0 0.5rem;
+//     font-size: 2rem;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     box-shadow: inset 0 -1px 4px variables.$black;
+//     opacity: 0.7;
+// }
 
-.rightArrow {
-    border-top-left-radius: 8px;
-}
+// .rightArrow {
+//     border-top-left-radius: 8px;
+// }
 
-.leftArrow {
-    border-top-right-radius: 8px;
-}
+// .leftArrow {
+//     border-top-right-radius: 8px;
+// }
 
-.activeArrow {
-    opacity: 0.9;
-}
+// .activeArrow {
+//     opacity: 0.9;
+// }
 
-.arrow {
-    transform: translate(0, -4px);
-}
+// .arrow {
+//     transform: translate(0, -4px);
+// }
 
 .balloon {
     position: absolute;
