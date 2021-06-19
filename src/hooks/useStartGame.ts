@@ -9,9 +9,11 @@ const useStartGame = (playTrial: (isi:number) => void) => {
     const [gameOn, setGameOn] = useState(false);
 
     const handleStart = () => {
-        setBalloonToShow(balloonImg);
-        setGameOn(true);
-        playTrial(initialISI);
+        if (!gameOn){
+            setBalloonToShow(balloonImg);
+            setGameOn(true);
+            playTrial(initialISI);
+        }
     };
     return {balloonToShow, gameOn, handleStart};
 };
