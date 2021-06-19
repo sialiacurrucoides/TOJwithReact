@@ -44,6 +44,7 @@ const useEvalResponse = (isCorrect: boolean) => {
         }
         const position = initialBalloonPosition + minPosChange*(initialISI - currentISI.current)/minStep;
         setFromBottom(`${position}%`);
+        return errorNumber.current === maxTurnNr;
     };
 
     return {balloonLives, fromBottom, threshold, thresholds, trialNumber, setThreshold, evalResponse};

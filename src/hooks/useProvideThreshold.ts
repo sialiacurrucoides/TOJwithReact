@@ -17,8 +17,8 @@ const useProvideThreshold = (isCorrect: boolean, showFeedback: boolean, playTria
     useEffect(() => {
         if (showFeedback){
             setTimeout(() => {
-                evalResponse(isCorrect); 
-                playTrial(currentISI.current);
+                const isOver = evalResponse(isCorrect);
+                if (!isOver) playTrial(currentISI.current);
             }, 900);
         }
     }, [showFeedback, currentISI, playTrial, isCorrect, evalResponse, balloonLives]);
