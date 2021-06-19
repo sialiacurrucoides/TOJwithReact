@@ -1,15 +1,15 @@
 import { useEffect, useRef } from 'react';
 import { calcThreshold } from '../utils/calcThreshold';
-import { maxTurnNr, initialISI } from '../constants/constants';
+import { maxTurnNr, initialISI, maxISI } from '../constants/constants';
 import useEvalResponse from './useEvalResponse';
 import useUpdateResults from './useUpdateResults';
 import useStartGame from './useStartGame';
 import { useAppSelector } from './storeManipulation';
 
 const useProvideThreshold = (isCorrect: boolean, showFeedback: boolean, playTrial: (isi: number) => void) => {
-    const {balloonLives, fromBottom, threshold, thresholds, setThreshold, evalResponse} = useEvalResponse(isCorrect);
+    const {balloonLives, fromBottom, threshold, thresholds, trialNumber, setThreshold, evalResponse} = useEvalResponse(isCorrect);
     const {balloonToShow, gameOn, handleStart} = useStartGame(playTrial);
-    const { updateResults } = useUpdateResults();
+    const { updateResults } = useUpdateResults(trialNumber);
     let currentISI = useRef<number>(initialISI);
     const activeArrow = useAppSelector(state => state.general.activeArrow);
 
@@ -17,11 +17,12 @@ const useProvideThreshold = (isCorrect: boolean, showFeedback: boolean, playTria
     useEffect(() => {
         if (showFeedback){
             setTimeout(() => {
-                evalResponse(isCorrect);
+                evalResponse(isCorrect); 
                 playTrial(currentISI.current);
-            }, 800);
+            }, 900);
         }
-    }, [showFeedback, currentISI, playTrial, isCorrect, evalResponse]);
+    }, [showFeedback, currentISI, playTrial, isCorrect, evalResponse, balloonLives]);
+
 
     useEffect(() => {
         const ths = thresholds.current;
@@ -35,7 +36,7 @@ const useProvideThreshold = (isCorrect: boolean, showFeedback: boolean, playTria
     }, [thresholds, setThreshold]);
 
     useEffect(() => {
-        updateResults(threshold);
+        if (threshold && threshold !== maxISI) updateResults(threshold);
         
     }, [threshold, updateResults]);
 

@@ -1,6 +1,6 @@
 
 import { useState, useRef } from 'react';
-import { maxTurnNr } from '../constants/constants';
+import { maxTurnNr, maxISI } from '../constants/constants';
 import { calcThreshold } from '../utils/calcThreshold';
 
 const initialISI = 120;
@@ -13,7 +13,7 @@ const useEvalResponse = (isCorrect: boolean) => {
     const [balloonLives, setBallonLives] = useState([1,2,3,4,5,6,7,8]);
     const [fromBottom, setFromBottom] = useState(`${initialBalloonPosition}%`);
     let currentISI = useRef<number>(initialISI);
-    const [threshold, setThreshold] = useState(200);
+    const [threshold, setThreshold] = useState(maxISI);
     let trialNumber = useRef<number>(0);
     let thresholds = useRef<number[]>([]);
     let correctInARow = useRef(0);
@@ -46,7 +46,7 @@ const useEvalResponse = (isCorrect: boolean) => {
         setFromBottom(`${position}%`);
     };
 
-    return {balloonLives, fromBottom, threshold, thresholds, setThreshold, evalResponse};
+    return {balloonLives, fromBottom, threshold, thresholds, trialNumber, setThreshold, evalResponse};
 
 };
 
